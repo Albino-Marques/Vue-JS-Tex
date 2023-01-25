@@ -2,11 +2,10 @@ Vue devtools
 
 https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
 
-
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
+
     <div id="app">{{ message }}</div>
-    
+
     <script>
         const { createApp } = Vue
 
@@ -20,7 +19,7 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
     </script> -->
 
     <!-- <div id="app">{{ message }}</div>
-    
+
     <script type="module">
         import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
@@ -41,9 +40,9 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
         }
       }
     </script>
-    
+
     <div id="app">{{ message }}</div>
-    
+
     <script type="module">
         import { createApp } from 'vue'
 
@@ -55,6 +54,7 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
             }
         }).mount('#app')
     </script>
+
 ///////////////////////////
 
     index.vue.html
@@ -78,17 +78,19 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
           import MyComponent from './components.js'
           createApp(MyComponent).mount('#app')
         </script>
+
 //////////////////////////////
 
         components.js
 
 
         export default {
-  data() {
-    return { count: 12 }
-  },
-  // template: `<div>count is {{ count }}</div>`
-  template: `<div id="app">
+
+data() {
+return { count: 12 }
+},
+// template: `<div>count is {{ count }}</div>`
+template: `<div id="app">
             <button @click="count++">
                 Count is: {{ count }}
             </button>
@@ -96,21 +98,24 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
 
 }
 
-
 # latest stable
+
 npm install vue@next
 sudo npm install -g @vue/cli
 vue --version
 
 # update upgrade
+
 sudo apt update
 sudo apt -y upgrade
 
 # Instalar curl
-sudo snap install curl 
+
+sudo snap install curl
 sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
 
 # Remover o Node js
+
 sudo apt-get remove nodejs
 sudo apt-get purge nodejs
 sudo apt-get autoremove
@@ -118,15 +123,21 @@ sudo apt-get autoremove
 # Instalar o Node 14x
 
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
 ## Run `sudo apt-get install -y nodejs` to install Node.js 14.x and npm
+
 ## You may also need development tools to build native addons:
+
      sudo apt-get install gcc g++ make
+
 ## To install the Yarn package manager, run:
+
      curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
      echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
      sudo apt-get update && sudo apt-get install yarn
 
 # latest stable
+
 npm install vue@next
 sudo npm install -g @vue/cli
 vue --version
@@ -136,20 +147,21 @@ vue create teste
 
 ---
 
- - [x] createApp
- - [x] data return
- - [x] mount
- - [x] template html {{ xxx }}
- - [x] methods
- - [x] módulos - export
- - [x] módulos não necessitam de defer
- - [x] módulos são exexutados uma única vez
- - [x] App js import modules
- 
+- [x] createApp
+- [x] data return
+- [x] mount
+- [x] template html {{ xxx }}
+- [x] methods
+- [x] módulos - export
+- [x] módulos não necessitam de defer
+- [x] módulos são exexutados uma única vez
+- [x] App js import modules
 
 # Vue
+
 ## createApp
-``` 
+
+```
 <script type="module">
     // const {createApp} = Vue
     import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
@@ -158,14 +170,16 @@ vue create teste
            return{
             m1:'Bem vindo ao Vue Js!',
             m2:'Bora codar  todos  os dias!'
-           } 
+           }
         }
     }).mount('#app')
 
 </script>
 
 ```
+
 ## Template HTML
+
 ```
  <div class="w-50 mx-auto mt-4 px-4"id="app">
     <button @click="count++" class="w-25 mx-auto">{{count}}</button>
@@ -178,7 +192,9 @@ vue create teste
 
 <button v-on:click="multiplicar" class="w-25 mx-auto">{{count}} x 4 = {{n}}</button>
 ```
+
 ## Módulo (calulos.js)
+
 ```
 export default{
       data(){
@@ -187,7 +203,7 @@ export default{
             m2:'Clica ai denovo! :)',
             count:1,
             n:4
-           } 
+           }
         },
         methods:{
             multiplicar(){
@@ -196,7 +212,9 @@ export default{
         }
 }
 ```
+
 ## import calculos from app_1.js
+
 ```
   // const {createApp} = Vue
     import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
@@ -206,6 +224,7 @@ export default{
 ```
 
 ## Template HTML
+
 ```
  <form id="formUser">
         <input type="text" v-model="inputUser_nome" placeholder="Digite seu nome">
@@ -216,6 +235,7 @@ export default{
 ```
 
 ## Módulo (formUser.js)
+
 ```
 export default{
     data(){
@@ -232,9 +252,11 @@ export default{
            // console.log(this.inputUser_nome)
         }
     }
-} 
+}
 ```
+
 ## import formUser from app_2.js
+
 ```
   // const {createApp} = Vue
     import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
@@ -244,11 +266,8 @@ export default{
     createApp(formUser).mount('#app3')
 ```
 
-
-
-
-
 # latest stable
+
 npm install vue@next
 sudo npm install -g @vue/cli
 vue --version

@@ -14,13 +14,15 @@
             display: flex;
             justify-content: center;
             align-items: start;
-            min-height: 100vh;
+            margin: auto;
+            width: 580px;
+            height: 280px;
             font-size: 3rem;
             font-weight: 700;
-            padding: 0;
-            margin: 0;
+            vertical-align: middle;
             box-sizing: border-box;
             flex-flow: column;
+            border: 1px solid brown;
 
         }
 
@@ -41,18 +43,29 @@
             <p>{{m}}</p>
             <p>{{m2}}</p>
         </div>
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!--Forma de importação por CDN padrão-->
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
 
-        <script>
-            const { createApp } = Vue
+        <script type="module">
+            /*Forma de importação por CDN padrão*/
+            // const { createApp } = Vue
+
+            /*Forma de importação por ES6*/
+            import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
             createApp({
                 data() {
                     return {
                         m: 'Bem vindo ao Vue.JS!',
-                        m2: 'Bora codar!'
+                        m2: 'Bora codar todos os dias.!'
                     }
                 }
             }).mount('#app')
+                //importmap
+        </script>
+        <script type="importmap">
+            imports: {
+                'vue': 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+            }
         </script>
 
 </html>
